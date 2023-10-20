@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Food API</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/tailwind.config.js"></script>
+  </head>
+  <body>
+    <header
+      class="text-xs text-slate-400 flex-col m-auto w-1/2 justify-center text-center mt-12"
+    >
+      <h1 class="text-xl font-bold text-black leading-10">
+        Find Meals For Your Ingredients
+      </h1>
+      <p>Real food doesn't have ingredients, real food is ingredients</p>
+      <p class="mb-4">-Jamie Oliver</p>
+
+      <label class="relative block">
+        <span class="sr-only">Search</span>
+        <input
+          id="input"
+          class="placeholder-italic placeholder-slate-400 block bg-white w-1/2 m-auto border border-orange-700 rounded-2xl py-2 pl-9 pr-9 shadow-sm focus:outline-none focus:border-orange-600 focus:ring-orange-600 focus:ring-1 sm:text-sm"
+          placeholder="Search for anything..."
+          type="text"
+          name="search"
+        />
+        <span
+          class="absolute inset-y-0 right-1/4 flex items-center pl-3 pr-3 bg-orange-600 rounded-r-2xl"
+        >
+          <svg
+            id="search-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-search"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85
+                       3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5
+                       5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+            />
+          </svg>
+        </span>
+      </label>
+    </header>
+
+    <h2
+      id="search-results-text"
+      class="font-bold w-1/2 m-auto text-xl text-center mt-10 mb-10 hidden"
+    >
+      Your Search Results:
+    </h2>
+
+    <div
+      id="search-results"
+      class="grid grid-cols-3 w-9/12 justify-center gap-6 m-auto"
+    ></div>
+
+    <div
+      id="meal-instructions-parent"
+      class="fixed inset-0 left-1/2 top-1/2 mb-4 transform -translate-x-1/2 -translate-y-1/2 hidden flex-col justify-center w-6/12 h-5/6 text-center"
+    >
+      <div
+        id="content"
+        class="relative bg-orange-600 px-14 h-full overflow-y-auto rounded-xl"
+      >
+        <button
+          id="close-instructions"
+          class="absolute font-bold text-black bg-gray-300 rounded-full px-4 py-1 right-4 mt-4"
+        >
+          X
+        </button>
+
+        <h2
+          id="meal-name"
+          class="text-gray-300 font-bold text-xl mb-4 mt-10"
+        ></h2>
+
+        <p class="mb-3">
+          <span
+            id="meal-category"
+            class="text-orange-600 bg-gray-300 px-6 rounded-md font-bold"
+          ></span>
+        </p>
+        <h3 class="font-bold mb-3 text-gray-300">Instructions:</h3>
+
+        <p id="instructions" class="mb-8 text-gray-300"></p>
+
+        <img
+          id="instructions-image"
+          class="w-20 h-20 rounded-full m-auto mb-4"
+        />
+
+        <a
+          href="https://gooogle.com"
+          class="text-gray-300 font-bold underline pb-32 block"
+          >Watch Video</a
+        >
+      </div>
+    </div>
+
+    <script src="index.js" async defer></script>
+  </body>
+</html>
